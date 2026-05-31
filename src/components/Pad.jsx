@@ -1,7 +1,7 @@
 import CalButton from "./CalButton";
 import { useContext } from "react";
 import { CalExpressionContext } from "../context/CalExpressionContext";
-import { operations, operate } from "../utils/operations";
+import { operations, operate, removeOneDigitAtTime } from "../utils/operations";
 
 function Pad(){
     const { calExpressionString, setCalExpressionString } = useContext(CalExpressionContext);
@@ -18,8 +18,15 @@ function Pad(){
         if(calKey === '='){
             const result = operate(calExpressionString);
             setCalExpressionString(result);
-            return
-        } 
+            return;
+        } else if (calKey.toUpperCase() === 'R') {
+            const result = removeOneDigitAtTime(calExpressionString.toString());
+            setCalExpressionString(result);
+            return;
+        } else if (calKey.toUpperCase() === 'C') {
+            setCalExpressionString('');
+            return;
+        }
         setCalExpressionString(prev => prev + calKey);
     }
 

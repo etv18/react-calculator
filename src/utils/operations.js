@@ -6,7 +6,7 @@ export function operate(calExpression){
     let result;
     
     for (const op of operations) {
-        if(operations.includes(op)){
+        if(calExpression.includes(op)){
             symbol = op;
             break;
         }
@@ -44,4 +44,8 @@ export function operate(calExpression){
     }
 
     return result;
+}
+
+export function removeOneDigitAtTime(calExpression){
+    return calExpression.slice(0, -1);
 }
