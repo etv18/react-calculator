@@ -9,8 +9,10 @@ function Calculator(){
 
     return (
         <CalExpressionContext.Provider value={{ calExpressionString, setCalExpressionString }}>
-            <ResultWindow></ResultWindow>
-            <Pad></Pad>
+            <div className="container mt-1" style={{width: '200px'}}>
+                    <ResultWindow></ResultWindow>
+                    <Pad></Pad>
+            </div>
       </CalExpressionContext.Provider>
     );
 }
