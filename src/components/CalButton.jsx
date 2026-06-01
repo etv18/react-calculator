@@ -3,7 +3,7 @@ import '../css/CalButton.css';
 function CalButton({btnProp, onClick}){
     return <button 
             id={btnProp.id} 
-            className="cal-button"
+            className="btn btn-secondary"
             onClick={onClick}
         >
             {btnProp.text}
