@@ -1,7 +1,7 @@
 import CalButton from "./CalButton";
 import { useContext } from "react";
 import { CalExpressionContext } from "../context/CalExpressionContext";
-import { operations, operate, removeOneDigitAtTime } from "../utils/operations";
+import { operate, removeOneDigitAtTime } from "../utils/operations";
 
 function Pad(){
     const { calExpressionString, setCalExpressionString } = useContext(CalExpressionContext);
